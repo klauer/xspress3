@@ -173,11 +173,11 @@ dbLoadRecords("$(MCA)/mcaApp/Db/simple_mca.db", "P=$(XSPRESS3_PREFIX):, M=mca4, 
 iocInit
 
 #Set up some of the more complicated HDF PVs
-dbpf("$(XSPRESS3_PREFIX):HDF5:FileTemplate", "%s%s%d.hdf5")
+dbpf("$(XSPRESS3_PREFIX):HDF5:FileTemplate", "%s%s_%d.hdf5")
 dbpf("$(XSPRESS3_PREFIX):HDF5:FileWriteMode", "Stream")
 dbpf("$(XSPRESS3_PREFIX):HDF5:EnableCallbacks", "Enable")
 dbpf("$(XSPRESS3_PREFIX):HDF5:Compression", "zlib")
-dbpf("$(XSPRESS3_PREFIX):HDF5:ZLevel",      "3")
+dbpf("$(XSPRESS3_PREFIX):HDF5:ZLevel",      "1")
 
 #Set up the PROC plugin spectra summing
 dbpf("$(XSPRESS3_PREFIX):PROC:EnableFilter",    "Enable")
@@ -257,5 +257,40 @@ dbpf("$(XSPRESS3_PREFIX):ROISUM4:EnableY", "Enable")
 dbpf("$(XSPRESS3_PREFIX):ROISUM4:MinY", "3")
 dbpf("$(XSPRESS3_PREFIX):ROISUM4:SizeY", "1")
 dbpf("$(XSPRESS3_PREFIX):C4_PluginControlValExtraROI", "0")
+
+dbpf("$(XSPRESS3_PREFIX):C1_ROI1:ValueSum_RBV.DESC", "unused")
+dbpf("$(XSPRESS3_PREFIX):C1_ROI2:ValueSum_RBV.DESC", "unused")
+dbpf("$(XSPRESS3_PREFIX):C1_ROI3:ValueSum_RBV.DESC", "unused")
+dbpf("$(XSPRESS3_PREFIX):C1_ROI4:ValueSum_RBV.DESC", "outputCounts")
+
+dbpf("$(XSPRESS3_PREFIX):C1_MCA_ROI4_HLM", "4050")
+dbpf("$(XSPRESS3_PREFIX):C2_MCA_ROI4_HLM", "4050")
+dbpf("$(XSPRESS3_PREFIX):C3_MCA_ROI4_HLM", "4050")
+dbpf("$(XSPRESS3_PREFIX):C4_MCA_ROI4_HLM", "4050")
+dbpf("$(XSPRESS3_PREFIX):C1_MCA_ROI4_LLM", "50")
+dbpf("$(XSPRESS3_PREFIX):C2_MCA_ROI4_LLM", "50")
+dbpf("$(XSPRESS3_PREFIX):C3_MCA_ROI4_LLM", "50")
+dbpf("$(XSPRESS3_PREFIX):C4_MCA_ROI4_LLM", "50")
+
+dbpf("$(XSPRESS3_PREFIX):C1_ROI1:ValueSum_RBV.PREC", "1")
+dbpf("$(XSPRESS3_PREFIX):C1_ROI2:ValueSum_RBV.PREC", "1")
+dbpf("$(XSPRESS3_PREFIX):C1_ROI3:ValueSum_RBV.PREC", "1")
+dbpf("$(XSPRESS3_PREFIX):C1_ROI4:ValueSum_RBV.PREC", "1")
+
+dbpf("$(XSPRESS3_PREFIX):C2_ROI1:ValueSum_RBV.PREC", "1")
+dbpf("$(XSPRESS3_PREFIX):C2_ROI2:ValueSum_RBV.PREC", "1")
+dbpf("$(XSPRESS3_PREFIX):C2_ROI3:ValueSum_RBV.PREC", "1")
+dbpf("$(XSPRESS3_PREFIX):C2_ROI4:ValueSum_RBV.PREC", "1")
+
+dbpf("$(XSPRESS3_PREFIX):C3_ROI1:ValueSum_RBV.PREC", "1")
+dbpf("$(XSPRESS3_PREFIX):C3_ROI2:ValueSum_RBV.PREC", "1")
+dbpf("$(XSPRESS3_PREFIX):C3_ROI3:ValueSum_RBV.PREC", "1")
+dbpf("$(XSPRESS3_PREFIX):C3_ROI4:ValueSum_RBV.PREC", "1")
+
+dbpf("$(XSPRESS3_PREFIX):C4_ROI1:ValueSum_RBV.PREC", "1")
+dbpf("$(XSPRESS3_PREFIX):C4_ROI2:ValueSum_RBV.PREC", "1")
+dbpf("$(XSPRESS3_PREFIX):C4_ROI3:ValueSum_RBV.PREC", "1")
+dbpf("$(XSPRESS3_PREFIX):C4_ROI4:ValueSum_RBV.PREC", "1")
+
 
 dbpf $(XSPRESS3_PREFIX):NDAttributesFile, example4ChannelApp/data/XSP3.xml
