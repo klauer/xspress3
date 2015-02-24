@@ -42,7 +42,7 @@ CHECK_RELEASE = YES
 # XSPRESS3 configuration parameters
 # XSPRESS3_CONFIG=$(abspath $(XSPRESS3))/xspress3_settings/4channel
 XSPRESS3_PREFIX=13QX4
-XSPRESS3_CONFIG:=/home/xspress3/xspress3.4chan.NIU2.settings
+XSPRESS3_CONFIG:=/home/xspress3/xspress3_settings
 XSPRESS3_SAVE:=$(abspath $(TOP))/save
 XSPRESS3_DATA=/home/xspress3/data
 
